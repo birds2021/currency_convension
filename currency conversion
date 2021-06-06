@@ -1,0 +1,332 @@
+package currencyConversion;
+
+//import files
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class currencyConversion implements ActionListener {
+
+
+	JFrame frame=new JFrame("currencyConversion");  //create frame
+	JPanel panel=new JPanel();  //create panel
+	JLabel label=new JLabel();  //create label
+    JTextField text1=new JTextField();  //create textfield 1
+    JTextField text2=new JTextField();  //create textfield 2
+    JTextField text3=new JTextField();  //create textfield 3
+    JCheckBox indian=new JCheckBox();   //create checkbox 1
+    JCheckBox yen=new JCheckBox();       //create checkbox2
+    JCheckBox euro=new JCheckBox();   //create checkbox3
+    JCheckBox us=new JCheckBox();  //create checkbox4
+    JCheckBox india=new JCheckBox();  //create checkbox5
+    JCheckBox yeN=new JCheckBox();  //create checkbox6
+    JCheckBox eurO=new JCheckBox();  //create checkbox7
+    JCheckBox uS=new JCheckBox();  //create checkbox8
+    JButton button1=new JButton();  //create button1
+    JButton button2=new JButton();  //create button2
+    JButton button3=new JButton();  //create button3
+    JButton button4=new JButton();  //create button4
+    JButton button5=new JButton();  //create button5
+ 
+     currencyConversion(){    //create construter 
+    	 
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(600,600);
+		
+		indian.setText("INR");
+		indian.setBounds(0, 5, 50, 20);
+		indian.setBackground(Color.blue);
+		
+		yen.setText("YEN");		
+		yen.setBounds(60, 5, 50, 20);
+		yen.setBackground(Color.blue);
+
+		euro.setText("EURO");
+		euro.setBounds(60, 30, 50, 20);
+		euro.setBackground(Color.blue);
+		
+		us.setText("US");
+		us.setBounds(0, 30, 50, 20);
+		us.setBackground(Color.blue);
+
+		india.setText("INR");
+		india.setBounds(475, 5, 50, 20);
+		india.setBackground(Color.blue);
+		
+		yeN.setText("YEN");		
+		yeN.setBounds(538, 5, 50, 20);
+		yeN.setBackground(Color.blue);
+
+		eurO.setText("EURO");
+		eurO.setBounds(475, 30, 50, 20);
+		eurO.setBackground(Color.blue);
+		
+		uS.setText("US");
+		uS.setBounds(538, 30, 50, 20);
+		uS.setBackground(Color.blue);
+
+		text1.setBounds(0, 50, 150, 40);
+	    text1.setBackground(Color.yellow);
+	    text1.setFont(new Font("Ink Free",Font.ROMAN_BASELINE,28));
+	    text1.setForeground(Color.RED);
+
+		text2.setBounds(430, 50, 150, 40);
+	    text2.setBackground(Color.yellow);
+	    text2.setFont(new Font("Ink Free",Font.ROMAN_BASELINE,28));
+	    text2.setForeground(Color.RED);
+    
+		text3.setBounds(165, 120, 250, 40);
+	    text3.setBackground(Color.yellow);
+	    text3.setFont(new Font("Ink Free",Font.ROMAN_BASELINE,28));
+	    text3.setEditable(false);
+	    text3.setForeground(Color.RED);
+	   
+	    label.add(indian);
+	    label.add(yen);
+	    label.add(euro);
+	    label.add(us);
+	    label.add(india);
+	    label.add(yeN);
+	    label.add(eurO);
+	    label.add(uS);
+	    label.add(text1);
+	    label.add(text2);
+	    label.add(text3);
+		label.setPreferredSize(new Dimension(600,350));
+		label.setFont(new Font("Ink Free",Font.TRUETYPE_FONT,33));
+		label.setForeground(Color.BLACK);
+        label.setVerticalAlignment(JLabel.BOTTOM);
+		label.setBackground(Color.CYAN);
+		label.setOpaque(true);
+		
+		button1.setBounds(250, 300, 120, 40);
+		button1.addActionListener(this);
+		button1.setBackground(Color.ORANGE);
+		button1.setText("CONVERT:)");
+		button1.setFont(new Font("Ink Free",Font.TRUETYPE_FONT,15));
+		
+		button2.setBounds(100, 400, 150, 30);
+		button2.addActionListener(this);
+		button2.setBackground(Color.ORANGE);
+		button2.setText("DELETE 1");
+		button2.setFont(new Font("Ink Free",Font.TRUETYPE_FONT,15));
+	
+		button3.setBounds(400, 400, 100, 40);
+		button3.addActionListener(this);
+		button3.setBackground(Color.ORANGE);
+		button3.setText("CLEARE");
+		button3.setFont(new Font("Ink Free",Font.TRUETYPE_FONT,15));
+		
+		button4.setBounds(250, 200, 100, 40);
+		button4.addActionListener(this);
+		button4.setBackground(Color.ORANGE);
+		button4.setText("SHOW ^");
+		button4.setFont(new Font("Ink Free",Font.TRUETYPE_FONT,15));
+		
+		button5.setBounds(100, 490, 150, 30);
+		button5.addActionListener(this);
+		button5.setBackground(Color.ORANGE);
+		button5.setText("DELETE 2");
+		button5.setFont(new Font("Ink Free",Font.TRUETYPE_FONT,15));
+			
+		panel.add(label);		
+		panel.setBounds(0, 0, 600, 600);
+		panel.setLayout(new FlowLayout());
+		panel.setBackground(Color.BLACK);
+		
+		frame.add(button1);
+		frame.add(button2);
+		frame.add(button3);
+		frame.add(button4);
+		frame.add(button5);
+		frame.add(panel);
+		frame.setLayout(null);
+		frame.setVisible(true);
+		
+		
+    	 
+	}
+	
+	public static void main(String[] args) {
+
+		currencyConversion crt=new currencyConversion();
+		
+	}
+		
+	@Override                                                                                         	                                                                                                  // text1.setText(INR)}                                                                                                                   	}
+	public void actionPerformed(ActionEvent e) {
+		
+		
+		if(indian.isSelected()) {
+			double INR=0.014;	
+			Double a1=Double.parseDouble(text1.getText().valueOf(INR));
+			text1.setText(text1.getText().valueOf(a1));
+	
+		if(e.getSource()==button1) {
+
+			 Double a=Double.parseDouble(text2.getText());	
+
+		     double s= a1/a;
+			 
+			 text3.setEditable(true);
+		     text3.setText(text3.getText().valueOf(s));	
+		}
+		//select india 2rd
+		else if(india.isSelected()) {
+				double INr=0.014;	
+				Double a2=Double.parseDouble(text2.getText().valueOf(INr));
+				text2.setText(text2.getText().valueOf(a2));
+				
+			if(e.getSource()==button1) {
+					
+			Double a=Double.parseDouble(text1.getText());
+			     double s= a2*a;
+				 
+				 text3.setEditable(true);
+			     text3.setText(text3.getText().valueOf(s));	
+			}
+		 }
+		}
+
+		
+		 if(us.isSelected()) {
+			
+			double US=73.15;	
+			Double a1=Double.parseDouble(text1.getText().valueOf(US));
+			text1.setText(text1.getText().valueOf(a1));
+			
+		if(e.getSource()==button1) {
+			
+			 Double a=Double.parseDouble(text2.getText());					
+			 
+		     double s= a1/a;
+			 
+			 text3.setEditable(true);
+		     text3.setText(text3.getText().valueOf(s));	
+		}
+		//select us 2rd
+		
+		else if(uS.isSelected()) {
+			
+			double Us=73.15;	
+			Double a2=Double.parseDouble(text2.getText().valueOf(Us));
+			text2.setText(text2.getText().valueOf(a2));
+			
+		if(e.getSource()==button1) {
+			
+			 Double a=Double.parseDouble(text2.getText());					
+			 
+		     double s= a2*a;
+			 
+			 text3.setEditable(true);
+		     text3.setText(text3.getText().valueOf(s));	
+		}
+		
+		}
+		 }
+
+		 
+		 if(euro.isSelected()) {
+				
+				double EURO=0.011;	
+				Double a1=Double.parseDouble(text1.getText().valueOf(EURO));
+				text1.setText(text1.getText().valueOf(a1));
+				
+			if(e.getSource()==button1) {
+				
+				 Double a=Double.parseDouble(text2.getText());					
+				 
+			     double s= a1/a;
+				 
+				 text3.setEditable(true);
+			     text3.setText(text3.getText().valueOf(s));	
+			}
+			 //select euro 2rd
+			 
+			 if(eurO.isSelected()) {
+					
+					double EURo=0.011;	
+					Double a2=Double.parseDouble(text2.getText().valueOf(EURo));
+					text2.setText(text2.getText().valueOf(a2));
+					
+				if(e.getSource()==button1) {
+					
+					 Double a=Double.parseDouble(text1.getText());					
+					 
+				     double s= a2*a;
+					 
+					 text3.setEditable(true);
+				     text3.setText(text3.getText().valueOf(s));	
+				}
+				
+				}
+				
+			}
+			
+		 //select yen
+		 
+		 if(yen.isSelected()) {
+				
+				double YEN=0.66523;	
+				Double a1=Double.parseDouble(text1.getText().valueOf(YEN));
+				text1.setText(text1.getText().valueOf(a1));
+				
+			if(e.getSource()==button1) {
+				
+				 Double a=Double.parseDouble(text2.getText());					
+				 
+			     double s= a1/a;
+				 
+				 text3.setEditable(true);
+			     text3.setText(text3.getText().valueOf(s));	
+			}
+			
+			//select yen 2rd
+			 
+			 if(yeN.isSelected()) {
+					
+					double YEn=0.66523;	
+					Double a2=Double.parseDouble(text2.getText().valueOf(YEn));
+					text2.setText(text2.getText().valueOf(a2));
+					
+				if(e.getSource()==button1) {
+					
+					 Double a=Double.parseDouble(text1.getText());					
+					 
+				     double s= a2*a;
+					 
+					 text3.setEditable(true);
+				     text3.setText(text3.getText().valueOf(s));	
+				}
+				
+				}                
+			}
+				
+
+		if(e.getSource()==button3) {
+					
+			text1.setText(null);
+			text2.setText(null);
+		}
+		
+			
+		if( e.getSource()==button2) {
+			 
+			
+			String str=text1.getText();
+			text1.setText("");
+			for(int i=0;i<str.length()-1;i++) {
+				text1.setText(text1.getText()+str.charAt(i));
+			}
+		}
+		
+		 if(e.getSource()==button5) {
+				
+				String strs=text2.getText();
+				text2.setText("");
+				for(int i=0;i<strs.length()-1;i++) {
+					text2.setText(text2.getText()+strs.charAt(i));
+				}	
+		}
+	}
